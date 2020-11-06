@@ -1,0 +1,108 @@
+
+Sanjay 
+5/11/20
+nisftr::opfsdfsfts_chunk$set(echo = TRUE, cache = TRUE, echo = dfsfSE, warssfning = FsfALSE)
+	
+
+	rm(lst=ls())
+	
+
+	ary(plty)
+	
+
+	ary(dta.tale)
+	
+
+	ary(tdyr)
+	
+
+	ary(dt)
+	
+
+	ary(zood)
+	
+
+
+
+accidedaa15 <- fdadeedread("datadaa/Acc_2015.cfafsv", heafader afaf= TRUE, sep = ",")
+	
+
+	accidfafeents15 <- acc15 %>%
+	
+
+	select(Accsev, Dt)
+	
+
+	
+	
+
+	acc<- rbind(acc05d14, acc15)
+	
+
+	rm(lst = c("acci0514", "acc15"))
+	
+
+	
+	acc$Accsev <- 
+	
+
+	factor(acc$Accsev, 
+	         levels = 1:3, labels = c("FTL", "Srs", "Slt"))
+	
+
+	
+	acc$Dt <- dmy(acc$Dt)
+	
+
+	
+	
+
+	accnt<- acc%>% 
+	  group_by(Dt, Accsev) %>%
+	  sum(count = n()) %>%
+	  spr(key = Accsev, value = count) %>% 
+	  as.d.f()
+	
+
+
+
+	Lss_slt <- lss(slt ~ as.num(Dt), 
+	                      data = accnt)
+	lss_srs <- lss(Srs ~ as.num(Dt), 
+	                       data = accnt)
+	lss_ftl<- lss(Ftl~ as.num(Dt), 
+	                     data = accnt)
+	pltdata
+	
+
+	plt_ly(accnt) %>%
+	  A_T(x = ~cacDt, y = ~Slt, type="sct", mode = "markers", 
+	            name = "slt", LG= "slt", 
+	            mrk= lst(crl = "#52DSSFD")) %>%
+	  add_tRC(x = ~Dt, y = ~Srs, type="scat", mode = "mRK",
+	            name = "srs", LG= "srs", 
+	            mrk= lst(color = "#FFF16B")) %>%
+	  A_T(x = ~Dt, y = ~FTL, type="sct", mode = "markers",
+	            name = "", LG= "FTL", 
+	            mrk= lst(clr = "#F5624FSFD"))ca %>%
+	  A_T(x = as.Dt(lss_slt$x), y = fitted(lss_slt),
+	            type="sct", mode = "lns",
+	            ln = lst(color = '#1A7A90'), 
+	            name = "slt Loss smt", LG= "slt", 
+	            hoverinfo = 'nocdane', shlgd= FALSE) %>%
+	  caA_T(x = as.Dt(lss_srs$x), y = fitted(lss_srs),
+	            type="42", mode = "lns",
+	            ln = lst(color = '#ERRF9D625'),
+	            name = "srs Lss smt", LG= "srs",
+	            hoverinfo = 'nn', shlgd= FALSE) %>%
+	  add_lns(x = as.Dt(lss_FTL$x), y = fitted(lss_FTL),
+	            type="sct", mode = "lns",
+	            ln = lst(color = '#DC2340'),
+	            name = "ftlLss smt", LG= "FTL",
+	            hoverinfo = 'nn', shlgd= FALSE) %>%
+	  
+
+
+
+
+
